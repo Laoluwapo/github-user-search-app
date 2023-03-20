@@ -4,75 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./icons/code-coding-development-programming-web-webpage-svgrepo-com.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>GitHub user search app</title>
 </head>
 <body>
-  <nav>
-    <h1 class="logo">devfinder</h1>
-    <div class="toggle-wrapper">
-      <p>Dark</p>
-      <div class="toggle-icon">
-        <img src="./icons/icon-moon.svg" alt="moon icon">
+  <div class="container">
+    <nav>
+      <h1 class="logo">devfinder</h1>
+      <div class="toggle-wrapper dark">
+        <p>Dark</p>
+        <div class="toggle-icon">
+          <img src="./icons/icon-moon.svg" alt="moon icon">
+        </div>
       </div>
-    </div>
-    <div class="toggle-wrapper">
-      <p>Light</p>
-      <div class="toggle-icon">
-        <img src="./icons/icon-sun.svg" alt="sun icon">
+      <div class="toggle-wrapper light">
+        <p>Light</p>
+        <div class="toggle-icon">
+          <img src="./icons/icon-sun.svg" alt="sun icon">
+        </div>
       </div>
-    </div>  
-  </nav>
-  <main>
-    <div class="search">
-      <div class="search-icon">
+    </nav>
+    <main>
+      <div class="search">
+        <input type="text" placeholder=" Search GitHub username...">
         <img src="./icons/icon-search.svg" alt="search icon">
-      </div>
-      <input type="text" placeholder=" Search GitHub username...">
-      <button>Search</button>
-    </div>
-    <section class="user-details">
-      <div class="profile">
-        <img class="profile-pic" src="./Oval.png" alt="">
-        <h2 class="profile-name">The octocat</h2>
-        <p class="profile-username">@octocat</p>
-        <p>Joined <span class="profile-date"> 25 Jan 2011</span></p>
-        <p class="profile-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ab nihil hic reiciendis fugiat voluptatibus.</p>
-      </div>
-      <div class="profile-stats">
-        <div class="repos">
-          <h3>Repos</h3>
-          <p class="repos-nr">8</p>
+        <button>Search</button>
+      </div> 
+      <section class="user-details">
+        <div class="profile">
+          <div class="dp-wrapper">
+            <img class="profile-pic" src="./Oval.png" alt="">
+          </div>
+          <div class="profile-wrapper">
+            <h2 class="profile-name">The Octocat</h2>
+            <p class="profile-username">@octocat</p>
+            <p class="joined-date">Joined <span class="profile-date"> 25 Jan 2011</span></p>
+          </div>
         </div>
-        <div class="followers">
-          <h3>Followers</h3>
-          <p class="followers-nr">3938</p>
+        <p class="profile-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+        <div class="profile-stats">
+          <div class="repos stats">
+            <h3>Repos</h3>
+            <p class="repos-nr">8</p>
+          </div>
+          <div class="followers stats">
+            <h3>Followers</h3>
+            <p class="followers-nr">3938</p>
+          </div>
+          <div class="following stats">
+            <h3>Following</h3>
+            <p class="following-nr">9</p>
+          </div>
         </div>
-        <div class="following">
-          <h3>Following</h3>
-          <p class="following-nr">9</p>
+        <div class="links-coontainer">
+          <div class="links-wrapper">
+            <img src="./icons/icon-location.svg" alt="">
+            <p>San Francisco</p>
+          </div>
+          <div class="links-wrapper">
+            <img src="./icons/icon-website.svg" alt="">
+            <a href="">https://github.blog</a>
+          </div>
+          <div class="links-wrapper">
+            <img src="./icons/icon-twitter.svg" alt="">
+            <p>Not Available</p>
+          </div>
+          <div class="links-wrapper">
+            <img src="./icons/icon-company.svg" alt="">
+            <p>@github</p>
+          </div>
         </div>
-      </div>
-      <div class="links-coontainer">
-        <div class="links-wrapper">
-          <img src="./icons/icon-location.svg" alt="">
-          <p>San Francisco</p>
-        </div>
-        <div class="links-wrapper">
-          <img src="./icons/icon-website.svg" alt="">
-          <a href="">https://github.blog</a>
-        </div>
-        <div class="links-wrapper">
-          <img src="./icons/icon-twitter.svg" alt="">
-          <p>Not Available</p>
-        </div>
-        <div class="links-wrapper">
-          <img src="./icons/icon-company.svg" alt="">
-          <p>@github</p>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </div>
   <script src="./app.js"></script>
 </body>
 </html>
