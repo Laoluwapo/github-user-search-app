@@ -20,7 +20,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4rem 0 3.6rem 0;
+    margin: 20% 0 3.6rem 0;
 }
 nav h1 {
     color: #222731;
@@ -150,4 +150,13 @@ nav h1 {
 .links-wrapper a{
     text-decoration: none;
     color: #4B6A9B;
+}
+@media screen and (min-width: 481px){
+    .links-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .profile-stats {
+        margin: 0 auto 3rem auto;
+    }
 }
