@@ -159,4 +159,22 @@ nav h1 {
     .profile-stats {
         margin: 0 auto 3rem auto;
     }
+    .search input {
+        font-size: 1.8rem;
+    }
+    .profile-wrapper h2 {
+        font-size: 2.6rem;
+    }
+    .profile-wrapper p {
+        font-size: 1.6rem;
+    }
+    .profile-desc {
+        font-size: 1.6rem;
+    }
+    .stats h3 {
+        font-size: 1.3rem;
+    }
+    .stats p {
+        font-size: 2.2rem;
+    }
 }
