@@ -29,6 +29,7 @@ async function searchUser() {
     const data = await getUserData();
     getDate(data);
     getProfileData(data);
+    getProfileStats(data);
     console.log(data);
   } catch (error) {
     console.error(error.message);
@@ -69,6 +70,18 @@ function getProfileData(data) {
   if (data.bio) {
     userBio.textContent = data.bio;
   }
+}
+
+// Function that gets profile stats
+function getProfileStats(data) {
+  const repos = document.querySelector(".repos-nr");
+  const followersNr = document.querySelector(".followers-nr");
+  const followingNr = document.querySelector(".following-nr");
+  repos.textContent = data.public_repos;
+  // Get number of followers
+  followersNr.textContent = data.followers;
+  // Get number of following
+  followingNr.textContent = data.following;
 }
 
 // Event listeners
