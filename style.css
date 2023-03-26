@@ -95,6 +95,7 @@ nav h1 {
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
     border-radius: 1.5rem;
     padding: 2.4rem;
+    display: none;
 }
 .profile {
     display: grid;
@@ -173,6 +174,9 @@ nav h1 {
 }
 .dummy-grid1, .dummy-grid2{
     display: none;
+}
+.not-available {
+    opacity: .6;
 }
 /* Ipads & Tablets */
 @media screen and (min-width: 768px){

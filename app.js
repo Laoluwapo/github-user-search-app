@@ -2,6 +2,7 @@
 const searchInput = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const errorMessage = document.querySelector(".error-msg");
+const displayUserDetails = document.querySelector(".user-details");
 
 // Functions
 // Function that fetches data from the API
@@ -14,11 +15,15 @@ const getUserData = async () => {
       throw new Error("could not fetch user data");
     }
     const data = await response.json();
+    // Display the user datails section
+    displayUserDetails.style.display = "block";
+    // Clear search input
     searchInput.value = "";
     return data;
   } catch (error) {
     // Display error message to users
     errorMessage.style.display = "block";
+    displayUserDetails.style.display = "none";
     searchInput.value = "";
   }
 };
@@ -30,6 +35,7 @@ async function searchUser() {
     getDate(data);
     getProfileData(data);
     getProfileStats(data);
+    getOtherDetails(data);
     console.log(data);
   } catch (error) {
     console.error(error.message);
@@ -82,6 +88,27 @@ function getProfileStats(data) {
   followersNr.textContent = data.followers;
   // Get number of following
   followingNr.textContent = data.following;
+}
+
+// Function that displays links and the remaining details
+function getOtherDetails(data) {
+  const location = document.querySelectorAll(".links-wrapper p")[0];
+  const githubLink = document.querySelector(".github-link");
+  const twitterUsername = document.querySelectorAll(".links-wrapper p")[1];
+  const company = document.querySelectorAll(".links-wrapper p")[2];
+  // Assign the data (using nullish coalescing)
+  githubLink.href = data.html_url;
+  location.textContent = data.location ?? "Not available";
+  githubLink.textContent = data.html_url ?? "Not available";
+  twitterUsername.textContent = data.twitter_username ?? "Not available";
+  company.textContent = data.company ?? "Not available";
+  // Save all elements in an aray to be able to style the ones that aren't available
+  const otherElements = [location, githubLink, twitterUsername, company];
+  otherElements.forEach((element) => {
+    if (element.textContent === "Not available") {
+      element.classList.add("not-available");
+    }
+  });
 }
 
 // Event listeners
