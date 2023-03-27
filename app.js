@@ -8,21 +8,32 @@ const displayUserDetails = document.querySelector(".user-details");
 // Function that fetches data from the API
 const getUserData = async () => {
   try {
-    const username = searchInput.value;
-    const url = `https://api.github.com/users/${username}`;
-    const response = await fetch(url);
-    if (response.status !== 200) {
-      throw new Error("could not fetch user data");
+    if (searchInput.value !== "") {
+      const username = searchInput.value;
+      const url = `https://api.github.com/users/${username}`;
+      const response = await fetch(url);
+      if (response.status !== 200) {
+        throw new Error("could not fetch user data");
+      }
+      const data = await response.json();
+      // Display the user datails section
+      displayUserDetails.style.display = "block";
+      // Clear search input
+      searchInput.value = "";
+      return data;
+    } else {
+      alert("Please input a Github username");
     }
-    const data = await response.json();
-    // Display the user datails section
-    displayUserDetails.style.display = "block";
-    // Clear search input
-    searchInput.value = "";
-    return data;
   } catch (error) {
-    // Display error message to users
-    errorMessage.style.display = "block";
+    // Get the viewport width
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    // Check if the screen width matches the media query
+    if (mediaQuery.matches) {
+      // Display error message to users
+      errorMessage.style.display = "block";
+    } else {
+      alert("No result");
+    }
     displayUserDetails.style.display = "none";
     searchInput.value = "";
   }
