@@ -7,25 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
   <title>GitHub user search app</title>
 </head>
 <body data-theme="dark">
   <div class="container">
     <nav>
       <h1 class="logo">devfinder</h1>
-      <div class="toggle-wrapper dark">
-        <p>Dark</p>
+      <button class="toggle-btn">
+        <span> Dark</span>
         <div class="toggle-icon">
           <img src="./icons/icon-moon.svg" alt="moon icon">
         </div>
-      </div>
-      <div class="toggle-wrapper light">
-        <p>Light</p>
-        <div class="toggle-icon">
-          <img src="./icons/icon-sun.svg" alt="sun icon">
-        </div>
-      </div>
+      </button>
     </nav>
     <main>
       <div class="search">

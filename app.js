@@ -47,7 +47,6 @@ async function searchUser() {
     getProfileData(data);
     getProfileStats(data);
     getOtherDetails(data);
-    console.log(data);
   } catch (error) {
     console.error(error.message);
   }
@@ -122,9 +121,28 @@ function getOtherDetails(data) {
   });
 }
 
+// Function that handles display appearance
+const bodyElement = document.querySelector("body");
+const toggleBtn = document.querySelector(".toggle-btn");
+
+// Function that toggles the theme of the page
+function changeTheme() {
+  const toggleIcon = toggleBtn.querySelector(".toggle-icon img");
+  const toggleText = toggleBtn.querySelector("span");
+  bodyElement.classList.toggle("dark-mode");
+  if (bodyElement.classList.contains("dark-mode")) {
+    toggleText.textContent = "Light";
+    toggleIcon.src = "icons/icon-sun.svg";
+  } else {
+    toggleText.textContent = "Dark";
+    toggleIcon.src = "icons/icon-moon.svg";
+  }
+}
+
 // Event listeners
 searchBtn.addEventListener("click", searchUser);
 searchInput.addEventListener("input", () => {
   // Hide error message
   errorMessage.style.display = "none";
 });
+toggleBtn.addEventListener("click", changeTheme);
