@@ -122,6 +122,7 @@ function getOtherDetails(data) {
 }
 
 // Function that handles display appearance
+//Selectors
 const bodyElement = document.querySelector("body");
 const toggleBtn = document.querySelector(".toggle-btn");
 

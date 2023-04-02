@@ -207,6 +207,7 @@ nav h1 {
 }
 .links-wrapper a{
     text-decoration: none;
+    color: var(--secondary-text);
 }
 .links-wrapper a:visited {
     color: var(--secondary-text);
