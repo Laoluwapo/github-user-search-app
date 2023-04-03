@@ -44,7 +44,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20% 0 3.6rem 0;
+    margin: 10% 0 3.6rem 0;
 }
 nav h1 {
     color: var(--logo-color);
