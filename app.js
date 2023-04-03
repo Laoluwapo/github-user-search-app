@@ -3,6 +3,8 @@ const searchInput = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const errorMessage = document.querySelector(".error-msg");
 const displayUserDetails = document.querySelector(".user-details");
+const bodyElement = document.querySelector("body");
+const toggleBtn = document.querySelector(".toggle-btn");
 
 // Functions
 // Function that fetches data from the API
@@ -121,23 +123,16 @@ function getOtherDetails(data) {
   });
 }
 
-// Function that handles display appearance
-//Selectors
-const bodyElement = document.querySelector("body");
-const toggleBtn = document.querySelector(".toggle-btn");
-
 // Function that toggles the theme of the page
 function changeTheme() {
   const toggleIcon = toggleBtn.querySelector(".toggle-icon img");
   const toggleText = toggleBtn.querySelector("span");
+  // Change the theme
   bodyElement.classList.toggle("dark-mode");
-  if (bodyElement.classList.contains("dark-mode")) {
-    toggleText.textContent = "Light";
-    toggleIcon.src = "icons/icon-sun.svg";
-  } else {
-    toggleText.textContent = "Dark";
-    toggleIcon.src = "icons/icon-moon.svg";
-  }
+  // Replace toggle button text and icon for dark mode
+  const isDarkMode = bodyElement.classList.contains("dark-mode");
+  toggleText.textContent = isDarkMode ? "Light" : "Dark";
+  toggleIcon.src = isDarkMode ? "icons/icon-sun.svg" : "icons/icon-moon.svg";
 }
 
 // Event listeners

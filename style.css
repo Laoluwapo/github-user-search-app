@@ -18,7 +18,7 @@ body.dark-mode {
     --profileName-color: #fff;
     --joinedDate-color: #fff;
     --profileStats-bg: rgba(0, 0, 0, 0.2);
-    --dark-boxshadow: box-shadow: 0px 4px 4px 0px #00000040;
+    --dark-boxshadow: 0px 4px 4px 0px #00000040;
     --secondary-text: #fff;
     --profileNr-color: #2B3442;
 }
