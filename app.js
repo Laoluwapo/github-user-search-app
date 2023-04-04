@@ -87,6 +87,8 @@ function getProfileData(data) {
   // Get user bio
   if (data.bio) {
     userBio.textContent = data.bio;
+  } else {
+    userBio.textContent = "";
   }
 }
 
